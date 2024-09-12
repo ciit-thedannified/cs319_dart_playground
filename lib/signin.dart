@@ -11,7 +11,7 @@ class SignInApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Hello Koji",
+      title: "Sign In Application",
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
@@ -105,8 +105,10 @@ class _SignInPageState extends State<SignInPage> {
             // Under development 
             // TASK #3 STARTS HERE
             ElevatedButton(
-                onPressed: () {//Comment sample
-                   },
+                onPressed: () {
+                  print(_username.text);
+                  print(_password.text);
+                },
                 child: const Text("Label here"),
             ),
             // TASK #3 ENDS HERE
