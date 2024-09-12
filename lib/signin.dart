@@ -69,7 +69,7 @@ class _SignInPageState extends State<SignInPage> {
             // TASK #1 ENDS HERE
 
             /*
-            TASK #2 - <NAME OF CONTRIBUTOR HERE>
+            TASK #2 - DANNE URIEL BOISER (SAMPLE)
             TODO: Create a TextField for 'password' here.
 
             INSTRUCTIONS:
@@ -79,7 +79,17 @@ class _SignInPageState extends State<SignInPage> {
              */
 
             // TASK #2 STARTS HERE
-
+            Wrap(
+              children: <Widget>[
+                const Text("Password:"),
+                TextField(
+                  controller: _password,
+                  showCursor: true,
+                  obscureText: true,
+                  obscuringCharacter: '*',
+                )
+              ],
+            ),
 
             // TASK #2 ENDS HERE
 
