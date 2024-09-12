@@ -48,7 +48,7 @@ class _SignInPageState extends State<SignInPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             /*
-            TASK #1 - <NAME OF CONTRIBUTOR HERE>
+            TASK #1 - CEDRIC JOSHUA PALAPUZ
             TODO: Create a TextField for 'username' here.
 
             INSTRUCTIONS:
@@ -57,12 +57,12 @@ class _SignInPageState extends State<SignInPage> {
             */
 
             // TASK #1 STARTS HERE
-            const Wrap(
+            Wrap(
               children: <Widget>[
-                Text("Label here"),
+                const Text("Username:"),
                 TextField(
-                  controller: null, // assign a TextEditingController here.
-                  showCursor: true, // optional, may be added or removed
+                  controller: _username,
+                  showCursor: true,
                 )
               ]
             ),
