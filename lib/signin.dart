@@ -11,12 +11,12 @@ class SignInApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Sign In Application",
+      title: "Hello Koji",
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const SignInPage(title: 'Sign In Page'),
+      home: const SignInPage(title: 'Login Page'),
       debugShowCheckedModeBanner: false,
     );
   }
