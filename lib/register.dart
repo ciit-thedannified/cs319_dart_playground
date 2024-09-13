@@ -16,6 +16,7 @@ class RegisterApp extends StatelessWidget {
         useMaterial3: true
       ),
       home: const RegisterPage(title: 'Register'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -30,6 +31,8 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+
+  final _emailField = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -51,12 +54,21 @@ class _RegisterPageState extends State<RegisterPage> {
              */
 
             // TASK #4 STARTS HERE
-            Container(
-              child: Row(
+            Wrap(
                 children: <Widget>[
 
+                  const Text('Username'),
+                  TextField(
+                    controller: _emailField, // assign a TextEditingController here.
+                    showCursor: true,
+
+                    decoration: InputDecoration(
+                      hintText: 'Username', // Placeholder
+                      hintStyle: TextStyle(color: Colors.grey), // Placeholder decorations
+                    ),
+                  )
+
                 ],
-              ),
             ),
             // TASK #4 ENDS HERE
 
