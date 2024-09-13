@@ -48,7 +48,7 @@ class _SignInPageState extends State<SignInPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             /*
-            TASK #1 - <NAME OF CONTRIBUTOR HERE>
+            TASK #1 - CEDRIC JOSHUA PALAPUZ
             TODO: Create a TextField for 'username' here.
 
             INSTRUCTIONS:
@@ -69,7 +69,7 @@ class _SignInPageState extends State<SignInPage> {
             // TASK #1 ENDS HERE
 
             /*
-            TASK #2 - <NAME OF CONTRIBUTOR HERE>
+            TASK #2 - KOJI MIGUEL ESCOLAR
             TODO: Create a TextField for 'password' here.
 
             INSTRUCTIONS:
@@ -84,7 +84,7 @@ class _SignInPageState extends State<SignInPage> {
             // TASK #2 ENDS HERE
 
             /*
-            TASK #3 - <NAME OF CONTRIBUTOR HERE>
+            TASK #3 - KEITH CHRISTIAN PERDIDO
             TODO: Create a Button that will process all data provided to the console.
             
             INSTRUCTIONS:
