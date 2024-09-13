@@ -1,3 +1,4 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -146,11 +147,30 @@ class _RegisterPageState extends State<RegisterPage> {
             // TASK #7 STARTS HERE
             ElevatedButton(
               onPressed: () {
+                if (!EmailValidator.validate(_emailField.text)) {
+                  // Invalid e-mail address dialog.
+                  showDialog(context: context, builder: (context) {
+                    return AlertDialog(
+                      title: const Text("Invalid e-mail address"),
+                      content: const Text("Please enter a valid e-mail address."),
+                      actions: [
+                        TextButton(
+                          child: const Text("CLOSE"),
+                          onPressed: () {
+                            return Navigator.of(context).pop();
+                          },
+                        )
+                      ],
+                    );
+                  });
 
+                  print("E-mail: ${_emailField.text}");
+                  print("Password: ${_passwordController.text}");
+                }
               },
-              child: const Text("Label here"),
+              child: const Text("Register"),
             ),
-            // TASK #7 ENDS HERE
+            // TASK #7 END HERE
           ],
         ),
       )
