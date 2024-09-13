@@ -57,6 +57,8 @@ class _SignInPageState extends State<SignInPage> {
   }
 }
 
+  get blue => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -141,10 +143,25 @@ class _SignInPageState extends State<SignInPage> {
              */
             
             // TASK #3 STARTS HERE
-            ElevatedButton(
-                onPressed: () {},
-                child: const Text("Label here"),
-            ),
+            const SizedBox(height: 50),
+            SizedBox(
+              width: 150, //Width Size of the button
+              height: 50, // Height of the button
+           child:  ElevatedButton(
+                onPressed: () {
+
+                   print("Username:"+ _username.text); //Print Username to console
+                   print("Password:"+_password.text); //Print Password to console
+
+                },
+                child: const Text("Login"),
+             style: ButtonStyle( // Used to style the button
+               backgroundColor: WidgetStateProperty.all(Colors.blue), // button color
+               foregroundColor: WidgetStateProperty.all(Colors.white), //text color
+              ),
+             ),
+            )
+
             // TASK #3 ENDS HERE
           ],
         )
