@@ -43,7 +43,7 @@ class _RegisterPageState extends State<RegisterPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             /*
-            TASK #4 - <NAME OF CONTRIBUTOR HERE>
+            TASK #4 - Jan Carlo P. Pastor
             TODO: Create a TextField for 'username' here.
 
             INSTRUCTIONS:
