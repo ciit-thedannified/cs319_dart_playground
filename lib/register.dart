@@ -16,6 +16,7 @@ class RegisterApp extends StatelessWidget {
         useMaterial3: true
       ),
       home: const RegisterPage(title: 'Register'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -30,6 +31,8 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+
+  final _emailField = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
   @override
@@ -52,14 +55,26 @@ class _RegisterPageState extends State<RegisterPage> {
              */
 
             // TASK #4 STARTS HERE
-            Row(
-              children: <Widget>[
+            Wrap(
+                children: <Widget>[
 
-              ],
+                  const Text('Username'),
+                  TextField(
+                    controller: _emailField, // assign a TextEditingController here.
+                    showCursor: true,
+
+                    decoration: InputDecoration(
+                      hintText: 'Username', // Placeholder
+                      hintStyle: TextStyle(color: Colors.grey), // Placeholder decorations
+                    ),
+                  )
+
+                ],
             ),
             // TASK #4 ENDS HERE
 
             /*
+            TASK #5 - DANNE URIEL BOISER
             TASK #5 - DANNE URIEL BOISER
             TODO: Create a TextField for 'email' here.
 
@@ -70,16 +85,21 @@ class _RegisterPageState extends State<RegisterPage> {
             // TASK #5 STARTS HERE
             Row(
               children: <Widget>[
+            Row(
+              children: <Widget>[
 
+              ],
               ],
             ),
             // TASK #5 ENDS HERE
 
             /*
             TASK #6 - AGOS BORJA
+            TASK #6 - AGOS BORJA
             TODO: Create a TextField for 'password' here.
 
             INSTRUCTIONS:
+            >> Similar to TASK #1, but build the code yourself.
             >> Similar to TASK #1, but build the code yourself.
             >> In practice, widgets must always have a trailing comma (,) after writing the code.
             >> The TextField must have 'obscuredText' prop enabled; 'obscuringCharacter' prop must be asterisk (*)
@@ -113,6 +133,7 @@ class _RegisterPageState extends State<RegisterPage> {
             // TASK #6 ENDS HERE
 
             /*
+            TASK #7 - DANNE URIEL BOISER
             TASK #7 - DANNE URIEL BOISER
             TODO: Create a Button that will process all data provided to the console.
 
