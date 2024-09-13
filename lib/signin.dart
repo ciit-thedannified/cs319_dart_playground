@@ -57,11 +57,11 @@ class _SignInPageState extends State<SignInPage> {
             */
 
             // TASK #1 STARTS HERE
-            const Wrap(
+            Wrap(
               children: <Widget>[
-                Text("Label here"),
+                const Text("USERNAME"),
                 TextField(
-                  controller: null, // assign a TextEditingController here.
+                  controller: _username, // assign a TextEditingController here.
                   showCursor: true, // optional, may be added or removed
                 )
               ]
