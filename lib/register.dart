@@ -82,9 +82,18 @@ class _RegisterPageState extends State<RegisterPage> {
              */
 
             // TASK #5 STARTS HERE
-            Row(
+            Wrap(
               children: <Widget>[
-
+                const Text("E-mail"),
+                TextField(
+                  controller: _emailField,
+                  decoration: const InputDecoration(
+                    hintText: "example@me.com",
+                    hintStyle: TextStyle(
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
               ],
             ),
             // TASK #5 ENDS HERE
