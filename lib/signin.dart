@@ -36,6 +36,27 @@ class _SignInPageState extends State<SignInPage> {
   final _username = TextEditingController();
   final _password = TextEditingController();
 
+  // Added some new declarations for the extra layer of security and can be added to the register.dart file if needed.
+  bool _isPasswordVisible = false; // Toggle password visibility
+  String _passwordStrength = ''; // To display password strength
+
+// Password Strength checker
+  void _checkPasswordStrength(String password){
+    if(password.length < 6){
+      setState((){
+        _passwordStrength = 'Weak';
+      });
+  } else if (password.length < 10){
+    setState((){
+      _passwordStrength = 'Medium';
+    });
+  } else{
+    setState((){
+      _passwordStrength = 'Strong';
+    });
+  }
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,8 +100,35 @@ class _SignInPageState extends State<SignInPage> {
              */
 
             // TASK #2 STARTS HERE
-
-
+            Wrap(
+              children: <Widget>[
+                const Text ("PASSWORD"),
+                TextField(
+                  controller: _password,
+                  obscureText: !_isPasswordVisible, // Toggle password Visibility
+                  obscuringCharacter: '*', // Asterisk to hide characters
+                  onChanged: (value) => _checkPasswordStrength(value), // Check password Strength 
+                  decoration: InputDecoration( // InputDecoration will provide UI for the TextField
+                    suffixIcon: IconButton( //Suffix Icon to toggle the password Visibility (Eye Icon)
+                      icon: Icon(
+                        _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                      ), //toggle the password Visbility state when the icon is pressed
+                      onPressed: () {
+                        setState(() {
+                          _isPasswordVisible = !_isPasswordVisible;
+                      });
+                      },
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Text(
+              'Strength: $_passwordStrength', // show password strength (Weak, Medium, Strong)
+              style: TextStyle( // Change the text Color based on the password strength (Green = Strong, Medium = Orange, Red = Weak)
+                color: _passwordStrength == "Strong" ? Colors.green : _passwordStrength == "Medium" ? Colors.orange : Colors.red,
+              ),
+            ),
             // TASK #2 ENDS HERE
 
             /*
