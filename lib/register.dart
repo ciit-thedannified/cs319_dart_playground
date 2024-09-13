@@ -73,7 +73,7 @@ class _RegisterPageState extends State<RegisterPage> {
             // TASK #4 ENDS HERE
 
             /*
-            TASK #5 - <NAME OF CONTRIBUTOR HERE>
+            TASK #5 - DANNE URIEL BOISER
             TODO: Create a TextField for 'email' here.
 
             INSTRUCTIONS:
@@ -81,37 +81,33 @@ class _RegisterPageState extends State<RegisterPage> {
              */
 
             // TASK #5 STARTS HERE
-            Container(
-              child: Row(
-                children: <Widget>[
+            Row(
+              children: <Widget>[
 
-                ],
-              ),
+              ],
             ),
             // TASK #5 ENDS HERE
 
             /*
-            TASK #6 - <NAME OF CONTRIBUTOR HERE>
+            TASK #6 - AGOS BORJA
             TODO: Create a TextField for 'password' here.
 
             INSTRUCTIONS:
-            >> Similar to TASK #1, but build the code yourself. (must be grouped in a 'Wrap' widget.
+            >> Similar to TASK #1, but build the code yourself.
             >> In practice, widgets must always have a trailing comma (,) after writing the code.
             >> The TextField must have 'obscuredText' prop enabled; 'obscuringCharacter' prop must be asterisk (*)
              */
 
             // TASK #6 STARTS HERE
-            Container(
-              child: Row(
-                children: <Widget>[
+            Row(
+              children: <Widget>[
 
-                ],
-              ),
+              ],
             ),
             // TASK #6 ENDS HERE
 
             /*
-            TASK #7 - <NAME OF CONTRIBUTOR HERE>
+            TASK #7 - DANNE URIEL BOISER
             TODO: Create a Button that will process all data provided to the console.
 
             INSTRUCTIONS:
