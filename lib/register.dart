@@ -30,6 +30,7 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -85,9 +86,28 @@ class _RegisterPageState extends State<RegisterPage> {
              */
 
             // TASK #6 STARTS HERE
+            const SizedBox(height: 16),
+
+            // TASK #6 - Password TextField
             Row(
               children: <Widget>[
-
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      const Text('Password'),
+                      TextField(
+                        controller: _passwordController,
+                        obscureText: true,
+                        obscuringCharacter: '*',
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'Enter password',
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
             // TASK #6 ENDS HERE
