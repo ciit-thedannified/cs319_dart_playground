@@ -165,6 +165,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     );
                   });
 
+                  print("Username: ${_usernameField.text}");
                   print("E-mail: ${_emailField.text}");
                   print("Password: ${_passwordController.text}");
                 }
