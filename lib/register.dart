@@ -148,7 +148,7 @@ class _RegisterPageState extends State<RegisterPage> {
             // TASK #7 STARTS HERE
             ElevatedButton(
               onPressed: () {
-                if (!EmailValidator.validate(_emailField.text)) {
+                if (EmailValidator.validate(_emailField.text)) {
                   // Invalid e-mail address dialog.
                   showDialog(context: context, builder: (context) {
                     return AlertDialog(
