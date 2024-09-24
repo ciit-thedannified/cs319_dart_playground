@@ -1,3 +1,4 @@
+import 'package:cs319_dart_playground/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.redAccent),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 255, 193, 7)),
         useMaterial3: true,
       ),
       home: const LoginPage(),
@@ -40,13 +41,13 @@ class _LoginPageState extends State<LoginPage> {
       _username = _usernameController.text;
       _password = _passwordController.text;
 
-      if (_username == 'usergary' && _password == 'pass143') {
+      if (_username == 'test' && _password == 'pass143') {
         // Credentials match, show modal dialog
         _showLoginSuccessDialog();
       } else {
         // Credentials do not match, show error message
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Invalid Username/Password!\nUsername: $_username\nPassword: $_password')),
+          SnackBar(content: Text('Invalid Username/Password!')),
         );
       }
     });
@@ -64,10 +65,10 @@ class _LoginPageState extends State<LoginPage> {
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog
-                // Navigate to the next screen (HomePage)
+                // Navigate to the next screen (Dashboard)
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const HomePage()),
+                  MaterialPageRoute(builder: (context) => const Dashboard()),
                 );
               },
               child: const Text('OK'),
@@ -111,6 +112,8 @@ class _LoginPageState extends State<LoginPage> {
   }
 }
 
+/*
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -118,7 +121,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page'),
+        title: const Text('Bank Name'),
       ),
       body: Center(
         child: Padding(
@@ -158,3 +161,5 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+*/
