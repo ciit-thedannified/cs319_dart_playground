@@ -1,3 +1,4 @@
+import 'package:cs319_dart_playground/main.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatefulWidget {
@@ -14,12 +15,20 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Text('Bank Name',
+        title: const Text('Bangko de Boiser',
           style: TextStyle(fontStyle: FontStyle.italic,
           fontWeight: FontWeight.bold,
           color: Color.fromARGB(255, 237, 180, 6),
           ),
         ),
+
+        // Logout
+        actions: <Widget> [
+          IconButton(onPressed: () { // Navigate to the previous screen (Login Page)
+            Navigator.pop(context);
+          }, 
+          icon: const Icon(Icons.logout))
+        ],
       ),
 
       body: Center(
@@ -42,7 +51,7 @@ class _DashboardState extends State<Dashboard> {
                   color: const Color.fromARGB(255, 255, 255, 255),
                   child: Column(
                   children: [
-                    Text('Welcome!'),
+                    Text('Welcome User!'),
                     Text('Your balance is: '),
                     ],
                   ),
