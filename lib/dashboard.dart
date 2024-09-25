@@ -1,3 +1,4 @@
+import 'package:cs319_dart_playground/deposit.dart';
 import 'package:cs319_dart_playground/main.dart';
 import 'package:flutter/material.dart';
 
@@ -67,7 +68,11 @@ class _DashboardState extends State<Dashboard> {
                 direction: Axis.vertical,
                 crossAxisAlignment: WrapCrossAlignment.center,
                   children: [
-                    ElevatedButton.icon(onPressed: () {}, 
+                    ElevatedButton.icon(onPressed: () {
+                      // Navigate to Deposit Page
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Deposit()),
+                      );
+                    }, 
                     icon: Icon(Icons.add_card), 
                     label: Text('Deposit Money')),
 
