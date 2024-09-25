@@ -49,40 +49,47 @@ class _DashboardState extends State<Dashboard> {
                   margin: EdgeInsets.all(22.0),
                   elevation: 5,
                   color: const Color.fromARGB(255, 255, 255, 255),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                   child: Column(
                   children: [
                     Text('Welcome User!'),
-                    Text('Your balance is: '),
+                    Text('Your balance is: PHP...'),
                     ],
+                  ),
                   ),
                 ),
 
-              Wrap( // Buttons
-              spacing: 8.0,
-              direction: Axis.vertical,
-              crossAxisAlignment: WrapCrossAlignment.center,
-                children: [                
-                  ElevatedButton.icon(onPressed: () {}, 
-                  icon: Icon(Icons.add_card), 
-                  label: Text('Deposit Money')),
+              Container(
+                padding: const EdgeInsets.only(left: 20, right: 20, bottom: 25),
+                child: Wrap( // Buttons
+                spacing: 15.0,
+                direction: Axis.vertical,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    ElevatedButton.icon(onPressed: () {}, 
+                    icon: Icon(Icons.add_card), 
+                    label: Text('Deposit Money')),
 
-                  ElevatedButton.icon(onPressed: () {}, 
-                  icon: Icon(Icons.arrow_circle_right_outlined),
-                  label: Text('Transfer Money')),
+                    ElevatedButton.icon(onPressed: () {}, 
+                    icon: Icon(Icons.arrow_circle_right_outlined),
+                    label: Text('Transfer Money')),
 
-                  ElevatedButton.icon(onPressed: () {}, 
-                  icon: Icon(Icons.monetization_on_outlined),
-                  label: Text('Withdraw Cash')),
+                    ElevatedButton.icon(onPressed: () {}, 
+                    icon: Icon(Icons.monetization_on_outlined),
+                    label: Text('Withdraw Cash')),
 
-                  ElevatedButton.icon(onPressed: () {}, 
-                  icon: Icon(Icons.text_snippet_outlined),
-                  label: Text('Pay Bills')),
+                    ElevatedButton.icon(onPressed: () {}, 
+                    icon: Icon(Icons.text_snippet_outlined),
+                    label: Text('Pay Bills')),
 
-                  ElevatedButton.icon(onPressed: () {}, 
-                  icon: Icon(Icons.abc),
-                  label: Text('Change Pin')),
-               ],
+                    ElevatedButton.icon(onPressed: () {}, 
+                    icon: Icon(Icons.abc),
+                    label: Text('Change Pin')),
+                ],
+                ),
               ),
+              
             ],
           ),
           ),
