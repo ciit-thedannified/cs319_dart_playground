@@ -1,4 +1,4 @@
-import 'package:cs319_dart_playground/dashboard.dart';
+import 'package:cs319_dart_playground/deposit.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -68,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                 // Navigate to the next screen (Dashboard)
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Dashboard()),
+                  MaterialPageRoute(builder: (context) => const DepositPage()),
                 );
               },
               child: const Text('OK'),
@@ -111,55 +111,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
-/*
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Bank Name'),
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Card(
-            elevation: 5, // Adds shadow for a raised look
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const <Widget>[
-                  Text(
-                    'Welcome!',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'You have successfully logged in to the home page. Enjoy exploring!',
-                    style: TextStyle(
-                      fontSize: 16,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-
-        ),
-      ),
-    );
-  }
-}
-
-*/

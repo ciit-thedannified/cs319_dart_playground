@@ -1,45 +1,47 @@
-import 'package:cs319_dart_playground/main.dart';
 import 'package:flutter/material.dart';
 
-class Deposit extends StatefulWidget{
-  const Deposit({super.key});
+class DepositPage extends StatefulWidget {
+  const DepositPage({super.key});
 
   @override
-  _DepositState createState() => _DepositState();
+  _DepositPageState createState() => _DepositPageState();
 }
 
-class _DepositState extends State<Deposit> {
+class _DepositPageState extends State<DepositPage> {
   final TextEditingController _amountController = TextEditingController();
-  double _balance = 10.00; 
+  double _balance = 1000.0;
 
-  void _depositMoney(){
+  void _depositMoney() {
     final String iamount = _amountController.text;
     double? amount = double.tryParse(iamount);
 
-    if(amount == null || amount <= 0){
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar (content: Text('Invalid Amount!')),
+    if (amount == null || amount <= 0) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Invalid Amount!')),
       );
-
-    }else {
+    } else {
       setState(() {
         _balance += amount;
       });
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Successfully Deposited \$${amount.toStringAsFixed(2)}. New Balance: \$${_balance.toStringAsFixed(2)}')),
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+            content: Text(
+                'Successfully Deposited \$${amount.toStringAsFixed(2)}. New Balance: \$${_balance.toStringAsFixed(2)}')),
       );
     }
   }
 
-   @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Deposit Page'),
+        title: const Text('Home Page'),
       ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Card(
-            elevation: 5, 
+            elevation: 5,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
