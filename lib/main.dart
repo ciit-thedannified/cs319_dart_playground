@@ -1,4 +1,3 @@
-import 'package:cs319_dart_playground/transfer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,11 +10,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(
-            255, 40, 1, 55)),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.redAccent),
         useMaterial3: true,
       ),
       home: const LoginPage(),
@@ -42,13 +39,13 @@ class _LoginPageState extends State<LoginPage> {
       _username = _usernameController.text;
       _password = _passwordController.text;
 
-      if (_username == 'test' && _password == 'pass143') {
+      if (_username == 'usergary' && _password == 'pass143') {
         // Credentials match, show modal dialog
         _showLoginSuccessDialog();
       } else {
         // Credentials do not match, show error message
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Invalid Username/Password!')),
+          SnackBar(content: Text('Invalid Username/Password!\nUsername: $_username\nPassword: $_password')),
         );
       }
     });
@@ -66,10 +63,10 @@ class _LoginPageState extends State<LoginPage> {
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop(); // Close the dialog
-                // Navigate to the next screen (Dashboard)
+                // Navigate to the next screen (HomePage)
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Transfer()),
+                  MaterialPageRoute(builder: (context) => const HomePage()),
                 );
               },
               child: const Text('OK'),
@@ -107,6 +104,54 @@ class _LoginPageState extends State<LoginPage> {
               child: const Text('Login'),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home Page'),
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Card(
+            elevation: 5, // Adds shadow for a raised look
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const <Widget>[
+                  Text(
+                    'Welcome!',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    'You have successfully logged in to the home page. Enjoy exploring!',
+                    style: TextStyle(
+                      fontSize: 16,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+
         ),
       ),
     );
