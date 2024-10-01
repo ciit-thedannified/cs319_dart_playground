@@ -8,5 +8,4 @@ class Assets {
   static const String libPayBills = 'lib/pay_bills.dart';
   static const String modelsAccount = 'lib/models/account.dart';
   static const String providersAccountProvider = 'lib/providers/AccountProvider.dart';
-
 }
