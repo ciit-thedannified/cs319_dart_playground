@@ -3,8 +3,9 @@ class Assets {
   Assets._();
 
   static const String generatedAssets = 'lib/generated/assets.dart';
+  static const String libDashboard = 'lib/dashboard.dart';
   static const String libMain = 'lib/main.dart';
-  static const String libRegister = 'lib/register.dart';
-  static const String libSignin = 'lib/signin.dart';
-
+  static const String libPayBills = 'lib/pay_bills.dart';
+  static const String modelsAccount = 'lib/models/account.dart';
+  static const String providersAccountProvider = 'lib/providers/AccountProvider.dart';
 }
