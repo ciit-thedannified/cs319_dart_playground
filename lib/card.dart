@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // To do's 
 // Add image based on the filipino food on Home.dart (Still can be changed if you want)
-//Redesign if ever gusto mo
+// Redesign if ever gusto mo
 
 class ProductCard extends StatefulWidget{
   final String title;
@@ -27,16 +27,20 @@ class _ProductCardState extends State<ProductCard>{
       onTap: widget.onTap,
       child: Container(
         width: 160,
+        height: 160,
         margin: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
-          color: Colors.green,
+          gradient: LinearGradient(
+            colors:[Colors.green, const Color.fromARGB(255, 56, 142, 60)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter),
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
+              color: const Color(0xFF6D6D6D).withOpacity(0.75),
               spreadRadius: 2,
               blurRadius: 5,
-              offset: Offset(0, 3),
+              offset: Offset(2, 3),
             ),
           ],
         ),
@@ -46,12 +50,15 @@ class _ProductCardState extends State<ProductCard>{
           children: [
             Expanded(
             child: Container(
-              color: Colors.green[400],
-              margin: EdgeInsets.all(8.0),
+              margin: EdgeInsets.fromLTRB(10, 10, 10, 6),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.green[400],
+              ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.fromLTRB(10, 6, 8, 8),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children:[
