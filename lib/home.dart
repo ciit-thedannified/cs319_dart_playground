@@ -28,12 +28,13 @@ Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
       title: Text("Home"),
+      titleTextStyle: TextStyle(fontSize: 22),
       centerTitle: true,
     ),
     body: Column(
       children: [ 
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.fromLTRB(22, 8, 22, 8),
           child: TextField( 
             decoration: InputDecoration(
               border: OutlineInputBorder( 
