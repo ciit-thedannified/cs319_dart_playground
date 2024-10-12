@@ -2,9 +2,7 @@ import 'package:cs319_dart_playground/models/product.dart';
 import 'package:cs319_dart_playground/pages/main_page.dart';
 import 'package:cs319_dart_playground/pages/product_information_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:go_router/go_router.dart';
-import 'screens/catalog_screen.dart';
 
 void main() {
   runApp(const MyApp());
