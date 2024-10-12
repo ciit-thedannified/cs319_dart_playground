@@ -1,3 +1,4 @@
+import 'package:cs319_dart_playground/models/product.dart';
 import 'package:flutter/material.dart';
 
 // To do's
@@ -5,21 +6,17 @@ import 'package:flutter/material.dart';
 // Redesign if ever gusto mo
 
 class ProductCard extends StatefulWidget {
-  final String title;
-  final String price;
-  final String imageURL; // For it to hold image url in the card
+  final Product product;
   final VoidCallback onTap;
 
   const ProductCard({
-    Key? key,
-    required this.title,
-    required this.price,
-    required this.imageURL, //Pass the imageURl to the constructor
+    super.key,
+    required this.product,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
-  _ProductCardState createState() => _ProductCardState();
+  State<ProductCard> createState() => _ProductCardState();
 }
 
 class _ProductCardState extends State<ProductCard> {
@@ -32,8 +29,8 @@ class _ProductCardState extends State<ProductCard> {
         height: 160,
         margin: const EdgeInsets.all(8.0),
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [Colors.green, const Color.fromARGB(255, 56, 142, 60)],
+          gradient: const LinearGradient(
+              colors: [Colors.green, Color.fromARGB(255, 56, 142, 60)],
               begin: Alignment.centerLeft,
               end: Alignment.centerRight),
           borderRadius: BorderRadius.circular(10),
@@ -42,7 +39,7 @@ class _ProductCardState extends State<ProductCard> {
               color: const Color.fromARGB(255, 103, 110, 96).withOpacity(0.7),
               spreadRadius: 4,
               blurRadius: 8,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             ),
           ],
         ),
@@ -58,13 +55,13 @@ class _ProductCardState extends State<ProductCard> {
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10)),
                 child: Image.asset(
-                  widget.imageURL,
+                  widget.product.imageUrl!,
                   width: double.infinity,
                   height: 120,
                   fit: BoxFit.cover,
 
                   // For no image/broken image
-                  errorBuilder: (context, error, StackTrace) {
+                  errorBuilder: (context, error, stackTrace) {
                     return Container(
                       color: Colors.grey,
                       child: const Icon(Icons.broken_image, size: 50),
@@ -79,18 +76,18 @@ class _ProductCardState extends State<ProductCard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    widget.title,
-                    style: TextStyle(
+                    widget.product.name,
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.1,
                       color: Colors.white,
                     ),
                   ),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   Text(
-                    widget.price,
-                    style: TextStyle(
+                    "PHP ${widget.product.price.toStringAsFixed(2)}",
+                    style: const TextStyle(
                       fontSize: 14,
                       color: Colors.white,
                     ),
