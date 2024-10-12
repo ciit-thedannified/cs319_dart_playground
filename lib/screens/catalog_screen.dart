@@ -1,5 +1,4 @@
 import 'package:cs319_dart_playground/data/food_data.dart';
-import 'package:cs319_dart_playground/main.dart';
 import 'package:cs319_dart_playground/models/product.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
