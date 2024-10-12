@@ -1,31 +1,28 @@
+import 'package:cs319_dart_playground/data/food_data.dart';
+import 'package:cs319_dart_playground/main.dart';
+import 'package:cs319_dart_playground/models/product.dart';
 import 'package:flutter/material.dart';
-import 'card.dart';
+import 'package:go_router/go_router.dart';
+import '../components/product_card.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<Map<String, String>> _products = [
-    {"title": "Adobo", "price": "\$100","image":"./images/Adobo.jpg"},
-    {"title": "Sinigang na Baboy", "price": "\$200","image":"./images/sinigang-baboy.jpg"},
-    {"title": "Menudo", "price": "\$300","image":"./images/menudo.jpg"},
-    {"title": "Sisig", "price": "\$400","image":"./images/sisig.jpg"},
-    {"title": "Kare-Kare", "price": "\$500","image":"./images/karekare.jpg"},
-    {"title": "Lechon", "price": "\$600","image":"./images/lechon.jpg"}
-  ];
+  final List<Product> _productsList = foodProducts;
 
-  List<Map<String, String>> _filteredProducts = [];
+  List<Product> _filteredProducts = [];
 
   final TextEditingController _searchController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    _filteredProducts = _products;
+    _filteredProducts = _productsList;
 
     _searchController.addListener(_filterProducts);
   }
@@ -39,8 +36,8 @@ class _HomePageState extends State<HomePage> {
   void _filterProducts() {
     String query = _searchController.text.toLowerCase();
     setState(() {
-      _filteredProducts = _products.where((product) {
-        return product["title"]!.toLowerCase().contains(query);
+      _filteredProducts = _productsList.where((product) {
+        return product.name.toLowerCase().contains(query);
       }).toList();
     });
   }
@@ -49,8 +46,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home"),
-        titleTextStyle: TextStyle(fontSize: 22),
+        title: const Text("Food Catalog"),
+        titleTextStyle: const TextStyle(fontSize: 22),
         centerTitle: true,
       ),
       body: Column(
@@ -63,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
                 hintText: 'Search',
               ),
             ),
@@ -80,11 +77,12 @@ class _HomePageState extends State<HomePage> {
               itemCount: _filteredProducts.length,
               itemBuilder: (context, index) {
                 return ProductCard(
-                  title: _filteredProducts[index]['title'] ?? 'No title',
-                  price: _filteredProducts[index]['price'] ?? 'No Title',
-                  imageURL: _filteredProducts[index]['image'] ?? '',
+                  product: _filteredProducts[index],
                   onTap: () {
-                    print('Tapped on ${_filteredProducts[index]['title']}');
+                    print('Tapped on ${_filteredProducts[index].name}');
+                    context.go('/product', extra: {
+                      'hello': _filteredProducts[index]
+                    });
                   },
                 );
               },
