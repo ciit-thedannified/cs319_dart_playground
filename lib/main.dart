@@ -1,20 +1,39 @@
+import 'package:cs319_dart_playground/models/product.dart';
+import 'package:cs319_dart_playground/pages/main_page.dart';
+import 'package:cs319_dart_playground/pages/product_information_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'home.dart';
+import 'package:go_router/go_router.dart';
+import 'screens/catalog_screen.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    debugPaintSizeEnabled = false;
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(), // To run the Home.dart
+      title: "Food Catalog",
+      routerConfig: GoRouter(initialLocation: '/', routes: <GoRoute>[
+        GoRoute(
+            path: '/',
+            builder: (context, state) => const MainPage(),
+            routes: <RouteBase>[
+              GoRoute(
+                  path: '/product',
+                  builder: (context, state) {
+                    var extraData = state.extra as Map<String, dynamic>?;
+
+                    Product? s = extraData?['hello'];
+
+                    return ProductInformationPage(product: s!);
+                  }),
+            ]),
+      ]),
     );
   }
 }
