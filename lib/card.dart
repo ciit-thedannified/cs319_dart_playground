@@ -34,15 +34,15 @@ class _ProductCardState extends State<ProductCard> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
               colors: [Colors.green, const Color.fromARGB(255, 56, 142, 60)],
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter),
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight),
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
-              color: const Color(0xFF6D6D6D).withOpacity(0.75),
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: Offset(2, 3),
+              color: const Color.fromARGB(255, 103, 110, 96).withOpacity(0.7),
+              spreadRadius: 4,
+              blurRadius: 8,
+              offset: Offset(0, 3),
             ),
           ],
         ),
@@ -50,6 +50,7 @@ class _ProductCardState extends State<ProductCard> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            
             //Image Container
             Expanded(
               child: ClipRRect(
@@ -61,6 +62,8 @@ class _ProductCardState extends State<ProductCard> {
                   width: double.infinity,
                   height: 120,
                   fit: BoxFit.cover,
+
+                  // For no image/broken image
                   errorBuilder: (context, error, StackTrace) {
                     return Container(
                       color: Colors.grey,
@@ -80,6 +83,7 @@ class _ProductCardState extends State<ProductCard> {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
+                      letterSpacing: 1.1,
                       color: Colors.white,
                     ),
                   ),

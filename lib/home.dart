@@ -12,11 +12,10 @@ class _HomePageState extends State<HomePage> {
   final List<Map<String, String>> _products = [
     {"title": "Adobo", "price": "\$100","image":"./images/Adobo.jpg"},
     {"title": "Sinigang na Baboy", "price": "\$200","image":"./images/sinigang-baboy.jpg"},
-    {"title": "Menudo", "price": "\$300"},
-    {"title": "Sisig", "price": "\$400"},
-    {"title": "Kare-Kare", "price": "\$500"},
-    {"title": "Lechon", "price": "\$600"},
-    {"title": "Example", "price": "\$700"},
+    {"title": "Menudo", "price": "\$300","image":"./images/menudo.jpg"},
+    {"title": "Sisig", "price": "\$400","image":"./images/sisig.jpg"},
+    {"title": "Kare-Kare", "price": "\$500","image":"./images/karekare.jpg"},
+    {"title": "Lechon", "price": "\$600","image":"./images/lechon.jpg"}
   ];
 
   List<Map<String, String>> _filteredProducts = [];
